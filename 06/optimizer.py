@@ -54,3 +54,5 @@ for epoch in range(num_epochs):
     train_loss, train_acc = run_epoch(model, train_loader, criterion, optimizer, is_train=True)
     test_loss, test_acc = run_epoch(model, test_loader, criterion, optimizer, is_train=False)
     print(f'epoch {epoch+1:>2} - train loss: {train_loss:.4f} - train_acc: {train_acc:.4f} - test loss: {test_loss:.4f} - test acc: {test_acc:.4f}')
+
+    
