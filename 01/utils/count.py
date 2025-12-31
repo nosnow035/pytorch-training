@@ -2,7 +2,7 @@ from utils.function import add
 
 def count_word(s, w):
     """
-        文字列内の文字数を数える関数
+        文字列内の受け取った文字数を数える関数
     """
     
     assert isinstance(s, str) # 第一引数の型をチェック
