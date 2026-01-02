@@ -2,20 +2,28 @@ import torch
 from torch import nn
 
 if __name__ == "__main__":
-    #Tenorを定義
-    #実際に学習に使われるデータは，
-    #　(Batchsize, channel, width, height)
-    #という形状
-    my_tensor = torch.ones((32,1024))
-    print(f"original : {my_tensor.shape}")
+    # problem1
+    print("===problem1===")
+    _in = torch.ones(32, 1024) #2次元配列
+    print(f"_in : {_in.shape}")
 
-    fc = nn.Linear(in_features=1024,out_features=256,bias = True)
-    out = fc(my_tensor)
-    print(f"out1:{out.shape}")
+    # problem2
+    print("===problem2===")
+    fc = nn.Linear(in_features=1024, out_features=256, bias=True) #全結合層
+    out1 = fc(_in)
+    print(f"out1 : {out1.shape}")
+    print(fc.bias)
 
-    fc2 = nn.Linear(in_features=1024,out_features=2048,bias = True)
-    out2 = fc2(my_tensor)
-    print(f"out2:{out2.shape}")
+    # problem3
+    print("===problem3===")
+    fc = nn.Linear(in_features=1024, out_features=2048, bias=True) #全結合層
+    out2 = fc(_in)
+    print(f"out2 : {out2.shape}")
+
+    # appendix
+    print("===appendix===")
+    out3 = out1.reshape(32, 16, 16)
+    print(f"out3 : {out3.shape}")
     
 
 
